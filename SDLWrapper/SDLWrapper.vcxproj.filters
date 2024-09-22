@@ -35,5 +35,8 @@
     <ClCompile Include="Types.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="build.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

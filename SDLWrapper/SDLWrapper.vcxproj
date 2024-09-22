@@ -19,22 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xkMath\xkMath.vcxproj">
-      <Project>{68f6959a-8c53-4752-9cde-f5fcaea62413}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\xkMath\xkMath\xkMath.vcxproj">
-      <Project>{68f6959a-8c53-4752-9cde-f5fcaea62413}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="MacroHelpers.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="build.cpp" />
     <ClCompile Include="Renderer.ixx" />
     <ClCompile Include="SDL2pp.ixx" />
     <ClCompile Include="SDL2ppImpl.ixx" />
     <ClCompile Include="Types.ixx" />
     <ClCompile Include="Window.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\xkMath\xkMath\xkMath.vcxproj">
+      <Project>{68f6959a-8c53-4752-9cde-f5fcaea62413}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\xkMath\xkMath\xkMath.vcxproj">
+      <Project>{68f6959a-8c53-4752-9cde-f5fcaea62413}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -88,6 +89,22 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnableManifest>true</VcpkgEnableManifest>
   </PropertyGroup>
