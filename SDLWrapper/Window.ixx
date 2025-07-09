@@ -53,7 +53,7 @@ namespace SDL2pp
 		}
 
 #ifdef SDL_VIDEO_DRIVER_WINDOWS
-		HWND GetInternalHandle()
+		HWND GetInternalHandle() const
 		{
 			SDL_SysWMinfo info;
 			SDL_GetVersion(&info.version);
@@ -62,6 +62,11 @@ namespace SDL2pp
 			return info.info.win.window;
 		}
 #endif
+		Uint32 GetID() const
+		{
+			return SDL_GetWindowID(&Get());
+		}
+
 
 	private:
 		const self_type& GetDerived() const noexcept { return static_cast<const self_type&>(*this); }
